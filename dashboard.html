@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Time Usage Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        #searchBox {
+            padding: 6px;
+            margin-bottom: 12px;
+            width: 100%;
+            font-size: 1em;
+            background-color: #111;
+            border: 1px solid #00ff00;
+            color: #00ff00;
+        }
+
+        .log-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .log-table th,
+        .log-table td {
+            padding: 8px;
+            border: 1px solid #333;
+        }
+
+        .log-table th {
+            background-color: #222;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Usage Dashboard</h2>
+    <input type="text" id="searchBox" placeholder="Search domain..." />
+    <div id="siteList">Loading...</div>
+    <h3>Logs</h3>
+    <div id="logControls">
+        <label for="domainSelect">Domain:</label>
+        <select id="domainSelect">
+            <option>Loading...</option>
+        </select>
+        <button data-days="7">7d</button>
+        <button data-days="14">14d</button>
+        <button data-days="30">30d</button>
+    </div>
+    <table class="log-table" id="logTable">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Time Spent</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script src="dashboard.js"></script>
+</body>
+
+</html>

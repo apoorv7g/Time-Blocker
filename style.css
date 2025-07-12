@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap');
+
+body {
+  font-family: 'JetBrains Mono', monospace;
+  background-color: #000000;
+  color: #00ff00;
+  padding: 20px;
+  text-shadow: 0 0 2px #00ff00;
+}
+
+h1, h2 {
+  color: #00ff00;
+  font-weight: 600;
+  border-bottom: 1px solid #00ff00;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+input, button {
+  font-family: 'JetBrains Mono', monospace;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #00ff00;
+  margin-top: 10px;
+  font-size: 1em;
+  background-color: #000;
+  color: #00ff00;
+  text-shadow: 0 0 1px #00ff00;
+}
+
+input:focus, button:focus {
+  outline: none;
+  box-shadow: 0 0 4px #00ff00;
+}
+
+button:hover {
+  background-color: #003300;
+}
+
+a {
+  color: #00ffff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #00ffcc;
+}
+
+.bar-bg {
+  background-color: #111;
+  height: 12px;
+  width: 100%;
+  border-radius: 6px;
+  margin-top: 5px;
+  border: 1px solid #00ff00;
+}
+
+.bar-fill {
+  background-color: #00ff00;
+  height: 100%;
+  border-radius: 6px;
+  box-shadow: 0 0 6px #00ff00;
+  transition: width 0.4s ease;
+}
+
+.site-row {
+  margin-bottom: 20px;
+}
+
+.blocked {
+  text-align: center;
+  margin-top: 25vh;
+}
+
+.blocked h1 {
+  font-size: 3em;
+  text-shadow: 0 0 5px #00ff00;
+}
+
+.blocked p {
+  font-size: 1.2em;
+  color: #00cc00;
+}
+
+#logControls {
+  margin-bottom: 10px;
+}
+
+#domainSelect {
+  background-color: #111;
+  color: #0f0;
+  border: 1px solid #0f0;
+  font-family: 'JetBrains Mono', monospace;
+  padding: 4px 6px;
+  margin-right: 8px;
+}
+
+#logControls button {
+  background-color: #222;
+  color: #0f0;
+  border: 1px solid #0f0;
+  margin-right: 5px;
+  padding: 4px 8px;
+  font-family: 'JetBrains Mono', monospace;
+  cursor: pointer;
+}
+
+#logControls button:hover {
+  background-color: #333;
+}
+

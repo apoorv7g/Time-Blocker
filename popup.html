@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <title>Time Blocker Settings</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h2>Site Timer Settings</h2>
+  <p><strong>Domain:</strong> <span id="domainDisplay">Loading...</span></p>
+  <p id="timeInfo"></p>
+
+  <label>Time Limit (minutes):</label>
+  <input type="number" id="limitInput" min="1" />
+
+  <div class="buttons">
+    <button id="saveBtn">Save</button>
+    <button id="resetBtn">Reset Time</button>
+  </div>
+
+  <p><a href="dashboard.html" target="_blank">View Countdown Dashboard</a></p>
+  <script src="popup.js"></script>
+</body>
+
+</html>
