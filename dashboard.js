@@ -53,6 +53,10 @@ function loadLogsUI() {
   chrome.storage.local.get("dailyLogs", (data) => {
     const dailyLogs = data.dailyLogs || {};
     const domainSelect = document.getElementById("domainSelect");
+
+    // Store currently selected value
+    const previousValue = domainSelect.value;
+
     domainSelect.innerHTML = "";
 
     Object.keys(dailyLogs).forEach((domain) => {
@@ -63,6 +67,11 @@ function loadLogsUI() {
     });
 
     if (Object.keys(dailyLogs).length > 0) {
+      // Try to preserve previous selection, or fallback to first
+      domainSelect.value = dailyLogs.hasOwnProperty(previousValue)
+        ? previousValue
+        : domainSelect.options[0].value;
+
       updateLogTable(domainSelect.value, 7);
     } else {
       const tbody = document.querySelector("#logTable tbody");
