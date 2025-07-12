@@ -4,7 +4,7 @@
   "version": "1.0",
   "author": "Apoorv",
   "description": "Dark mode site blocker with per-site timers and countdown dashboard.",
-  "permissions": ["storage", "tabs", "scripting"],
+  "permissions": ["storage", "tabs", "scripting", "alarms"],
   "host_permissions": ["<all_urls>"],
   "background": {
     "service_worker": "background.js"
