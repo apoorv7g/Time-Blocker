@@ -30,7 +30,15 @@ function logDailyUsage(domain) {
   });
 }
 
-setInterval(() => {
+// Setup the alarm when extension is installed or reloaded
+chrome.runtime.onInstalled.addListener(() => {
+  chrome.alarms.create("tick", { periodInMinutes: 0.016 }); // ~1 second
+});
+
+// Alarm-based time tracking
+chrome.alarms.onAlarm.addListener((alarm) => {
+  if (alarm.name !== "tick") return;
+
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     if (!tabs || !tabs[0] || !tabs[0].url) return;
 
@@ -44,7 +52,7 @@ setInterval(() => {
       const timeSpent = data.timeSpent || {};
       const startTimes = data.startTimes || {};
 
-      // Always track usage
+      // Always track time
       timeSpent[domain] = (timeSpent[domain] || 0) + 1;
       if (!startTimes[domain]) {
         startTimes[domain] = Date.now();
@@ -53,6 +61,7 @@ setInterval(() => {
       chrome.storage.local.set({ timeSpent, startTimes });
       logDailyUsage(domain);
 
+      // Only block if a limit is set
       const limit = limits[domain];
       if (limit === undefined) return;
 
@@ -77,4 +86,4 @@ setInterval(() => {
       }
     });
   });
-}, 1000);
+});
